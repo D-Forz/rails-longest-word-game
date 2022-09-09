@@ -1,2 +1,15 @@
 <h1>Games#new</h1>
 <p>Find me in app/views/games/new.html.erb</p>
+
+<ul>
+<% @letters.each do |letter| %>
+ <span><%= letter %></span>
+<%end%>
+</ul>
+
+<form action="/score" method="GET">
+  <input type="hidden", name= "odioso" value="<%= @letters.join %>" />
+
+  <input type="text" name="word" placeholder="Enter your guess" />
+  <input type="submit" value="accept" />
+</form>
